@@ -18,6 +18,8 @@ typedef struct Node {
     struct Node* prev;
 } Node;
 
+void nodeFree(Node*);
+
 typedef void NodePrintFunction(Node*);
 
 LinkedList* linkedListNew(size_t size);

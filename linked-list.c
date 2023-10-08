@@ -1,5 +1,16 @@
 #include "linked-list.h"
 
+void nodeFree(Node* n){
+    if (n == NULL) {
+        printf("Can't free NULL");
+	return;
+    }
+
+    void* data = (*n).data;
+    if (data == NULL) printf("Can't free data of address %p", n);
+    else free(data);
+    free(n);
+}
 
 LinkedList* linkedListNew(size_t size) {
     LinkedList* linkedList = (LinkedList*) malloc(sizeof(LinkedList));
